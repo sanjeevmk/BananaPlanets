@@ -1,18 +1,50 @@
 package tinkeryards.com.bananaplanets;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
+import android.content.Intent;
+import android.location.Criteria;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 
-public class BananaBegins extends ActionBarActivity {
+public class BananaBegins extends Activity {
 
+    BananaBegins instance;
+
+    LocationManager locationManager;
+    boolean isGpsEnabled;
+    Criteria crit = new Criteria();
+    Button start;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_banana_begins);
+        instance = this;
+
+        start = (Button)findViewById(R.id.StartButton);
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    final Intent bananaPlanetsIntent = new Intent(instance, PoiDataActivity.class);
+                    instance.startActivity(bananaPlanetsIntent);
+                }catch(Exception e){
+            /*
+			 * may never occur, as long as all SampleActivities exist and are
+			 * listed in manifest
+			 */
+
+                }
+            }
+        });
+
     }
+
 
 
     @Override

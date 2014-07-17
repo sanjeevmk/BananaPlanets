@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.ACCESS_GPS" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
     <uses-feature android:name="android.hardware.camera" android:required="true" />
     <uses-feature android:name="android.hardware.location" android:required="true" />
     <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true" />
@@ -30,6 +31,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="tinkeryards.com.bananaplanets.BananaPlanets" android:configChanges="orientation|keyboardHidden|screenSize"/>
+        <activity android:name="tinkeryards.com.bananaplanets.PoiDataActivity" android:configChanges="orientation|keyboardHidden|screenSize"/>
     </application>
 
 </manifest>
